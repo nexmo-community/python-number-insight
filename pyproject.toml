@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "nexmo-python-number-insight"
+version = "0.1.0"
+description = ""
+authors = ["Aaron Bassett <me@aaronbassett.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+nexmo = "^2.3"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.0"
+black = {version = "^18.3-alpha.0",allows-prereleases = true}
+pylint = "^2.3"
+flake8 = "^3.7"
+
+[tool.poetry.scripts]
+basic = "nexmo_python_number_insight.insight:NumberInsightBasic().get"
+standard = "nexmo_python_number_insight.insight:NumberInsightStandard().get"
+advanced = "nexmo_python_number_insight.insight:NumberInsightAdvanced().get"
+ipcheck = "nexmo_python_number_insight.insight:NumberInsightIP().get"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
